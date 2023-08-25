@@ -1,0 +1,38 @@
+/* Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Utility classes */
+.wrapper {
+    max-width: 60rem;
+    padding-inline: 1rem;
+    margin-inline: auto;
+}
+
+/* Components */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+}
+
+.photo-grid img {
+    height: 100%;
+    object-fit: cover;
+    transition: scale 350ms, opacity 350ms;
+}
+
+.photo-grid:has(img:hover) img:not(:hover) {
+    scale: 0.8;
+    opacity: 0.7;
+}
